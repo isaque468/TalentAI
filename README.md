@@ -1,4 +1,4 @@
-🧠 TalentAI — Sistema Inteligente de Triagem de Candidatos
+#🧠 TalentAI — Sistema Inteligente de Triagem de Candidatos
 
 Automação completa de recrutamento com Inteligência Artificial, integrada a dashboards analíticos para apoio à decisão no RH.
 
