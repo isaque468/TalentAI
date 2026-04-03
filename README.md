@@ -10,8 +10,11 @@ O problema que resolve
 
 AntesDepois
 ❌ Triagem manual e demorada   ✅ Análise automática em segundos
+
 ❌ Critérios subjetivos        ✅ Score padronizado por IA
+
 ❌ Sem rastreabilidade         ✅ Histórico completo na planilha
+
 ❌ Dashboards desatualizados   ✅ Indicadores em tempo real
 
 🏗️ Arquitetura do Sistema
