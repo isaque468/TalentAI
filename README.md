@@ -3,10 +3,16 @@
 Automação completa de recrutamento com Inteligência Artificial, integrada a dashboards analíticos para apoio à decisão no RH.
 
 
-📌 Sobre o Projeto
+
+* 📌 Sobre o Projeto
 O TalentAI é um sistema end-to-end de triagem de currículos que utiliza IA generativa para analisar candidatos, gerar scores de compatibilidade e alimentar dashboards em tempo real — sem intervenção humana.
 O problema que resolve
-AntesDepois❌ Triagem manual e demorada✅ Análise automática em segundos❌ Critérios subjetivos✅ Score padronizado por IA❌ Sem rastreabilidade✅ Histórico completo na planilha❌ Dashboards desatualizados✅ Indicadores em tempo real
+
+AntesDepois
+❌ Triagem manual e demorada   ✅ Análise automática em segundos
+❌ Critérios subjetivos        ✅ Score padronizado por IA
+❌ Sem rastreabilidade         ✅ Histórico completo na planilha
+❌ Dashboards desatualizados   ✅ Indicadores em tempo real
 
 🏗️ Arquitetura do Sistema
 Recrutador acessa a página (Lovable)
