@@ -60,51 +60,12 @@ Dashboard atualizado automaticamente (Power BI)
 O recrutador acessa a página do TalentAI, informa o nome da vaga e cola o currículo do candidato. A página envia os dados automaticamente via webhook para o n8n.
 
 ### 2. ⚙️ Automação (n8n)
-O n8n orquestra todo o fluxo em sequência:
-- Recebe os dados pelo webhook
-- Busca os requisitos da vaga na planilha
-- Envia para análise da IA
-- Arquiva o CV no Google Drive
-- Salva o resultado na planilha
+O n8n orquestra todo o fluxo em sequência — recebe os dados pelo webhook, busca os requisitos da vaga, envia para análise da IA, arquiva o CV no Google Drive e salva o resultado na planilha.
 
 ### 3. 🤖 Análise com IA (Google Gemini 2.5)
-O Gemini recebe o currículo completo junto com os requisitos obrigatórios e desejáveis da vaga e retorna uma análise estruturada com:
-- Score de compatibilidade (0 a 100)
-- Categoria de aderência
-- Competências identificadas
-- Lacunas em relação à vaga
-- Observação para o recrutador
+O Gemini recebe o currículo completo junto com os requisitos obrigatórios e desejáveis da vaga e retorna uma análise estruturada com score, competências identificadas, lacunas e observação para o recrutador.
 
-### 4. 📊 Base de Dados (Google Sheets)
-O projeto utiliza duas abas na planilha:
-
-**Aba Vagas** — requisitos de cada posição:
-| Nome da Vaga | Requisitos Obrigatórios | Requisitos Desejáveis | Nível | Experiência Mínima |
-|---|---|---|---|---|
-| Analista de dados | Python, SQL, Power BI, Excel | Machine Learning, Tableau | Pleno | 2 anos |
-| Desenvolvedor backend | Python, Docker, REST API, PostgreSQL | Kubernetes, Redis | Pleno | 3 anos |
-| UX designer | Figma, User Research, Prototipagem | Motion Design, Design System | Júnior/Pleno | 1 ano |
-
-**Aba Candidatos** — resultado de cada análise:
-| Campo | Descrição |
-|---|---|
-| ID | Sequencial automático |
-| Nome do Candidato | Extraído do currículo pela IA |
-| Vaga | Nome da vaga analisada |
-| Data da Análise | Gerada automaticamente |
-| Score (%) | 0 a 100 |
-| Categoria | Altamente / Parcialmente / Não Aderente |
-| Competências Identificadas | Skills encontradas no CV |
-| Lacunas | O que falta para a vaga |
-| Observação da IA | Análise em 1-2 frases |
-| Analista | "IA Gemini" (automático) |
-| Status Final | "Em avaliação" (padrão) |
-| Link do CV | Link direto para o arquivo no Google Drive |
-
-### 5. 🗄️ Arquivo de CVs (Google Drive)
-Cada currículo analisado é salvo automaticamente como arquivo **.txt** no Google Drive, na pasta **TalentAI_CVs**. O link direto é salvo na planilha para acesso rápido pelo recrutador.
-
-### 6. 🎯 Classificação de Candidatos
+### 4. 🎯 Classificação de Candidatos
 
 | Categoria | Score | Significado |
 |---|---|---|
@@ -114,57 +75,45 @@ Cada currículo analisado é salvo automaticamente como arquivo **.txt** no Goog
 
 ---
 
-## 📊 Dashboard Power BI
-
-Painel único com todas as métricas em uma página com tema TalentAI:
-
-**KPIs:**
-- Total de Candidatos
-- Média de Score
-- Altamente Aderentes
-- Não Aderentes
-
-**Gráficos:**
-- 🥧 Distribuição por Categoria (pizza)
-- 📊 Candidatos por Vaga (barras)
-- 🏆 Ranking de Candidatos (tabela ordenada por score com formatação condicional)
-
----
-
 ## 🖼️ Prints do Projeto
 
-### Interface de Envio (Lovable)
-![Lovable](prints/01_lovable_formulario.png)
+### 1. Interface — Página TalentAI (Lovable)
 
-### Fluxo de Automação (n8n)
-![n8n](prints/03_fluxo_n8n.png)
+![Página TalentAI](prints/01_lovable_formulario.png)
 
-### Planilha de Candidatos (Google Sheets)
-![Planilha](prints/06_planilha_candidatos.png)
+![CV Preenchido](prints/02_lovable_cv_preenchido.png)
 
-### CVs Arquivados (Google Drive)
-![Drive](prints/07_google_drive.png)
-
-### Dashboard (Power BI)
-![Power BI](prints/08_power_bi.png)
+![Análise Concluída](prints/04_lovable_analise_concluida.png)
 
 ---
 
-## 🗂️ Estrutura do Repositório
+### 2. Automação — Fluxo n8n
 
-```
-TalentAI/
-├── README.md
-└── prints/
-    ├── 01_lovable_formulario.png
-    ├── 02_lovable_sucesso.png
-    ├── 03_fluxo_n8n.png
-    ├── 04_prompt_gemini.png
-    ├── 05_planilha_vagas.png
-    ├── 06_planilha_candidatos.png
-    ├── 07_google_drive.png
-    └── 08_power_bi.png
-```
+![Fluxo n8n](prints/03_fluxo_n8n.png)
+
+![Fluxo Executado](prints/05_fluxo_n8n_executado.png)
+
+![Prompt Gemini](prints/06_prompt_gemini.png)
+
+---
+
+### 3. Base de Dados — Google Sheets
+
+![Planilha Candidatos](prints/07_planilha_candidatos.png)
+
+![Planilha Vagas](prints/08_planilha_vagas.png)
+
+---
+
+### 4. Arquivo de CVs — Google Drive
+
+![Google Drive](prints/10_google_drive.png)
+
+---
+
+### 5. Dashboard — Power BI
+
+![Power BI](prints/09_power_bi.png)
 
 ---
 
